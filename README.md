@@ -1,3 +1,2 @@
-# demo
- [demo](http://carryguan.me/flex-add/fb1.html)   
+# demo 
 [star](https://fog3211.github.io/demo/Star/Star.html)
