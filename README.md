@@ -1,6 +1,6 @@
 # demo 
 
-- [vue快餐管理操作](https://fog3211.github.io/demo/pos/dist/index.html)  
+- [vue快餐管理操作](https://fog3211.github.io/demo/pos/dist/index.html)(2018-8-19)  
 - [js翻页](https://fog3211.github.io/demo/page-turning/index.html)  
 - [vue购物车](https://fog3211.github.io/demo/vueShopCart/index.html)  
 - [vueTodoList](https://fog3211.github.io/demo/todolist/dist/index.html)  
