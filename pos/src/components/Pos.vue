@@ -1,7 +1,7 @@
 <template>
   <div class="pos">
     <el-row>
-      <el-col :span="7" class="pos-order" id="order-list">
+      <el-col :span="5" class="pos-order" id="order-list">
         <el-tabs class="select-list">
           <el-tab-pane label="点餐">
             <el-table border style="width: 100%" :data="tableData" stripe>
@@ -10,19 +10,18 @@
               <el-table-column prop="price" label="金额" width="60"></el-table-column>
               <el-table-column label="操作" width="100" fixed="right" align="center">
                 <template slot-scope="scope">
-                  <el-button type="text" size="small">删除</el-button>
-                  <el-button type="text" size="small">增加</el-button>
+                  <el-button type="text" size="small" @click="delSingleGoods(scope.row)">删除</el-button>
+                  <el-button type="text" size="small" @click="addOrderList(scope.row)">增加</el-button>
                 </template>
               </el-table-column>
             </el-table>
             <div class="totalDiv">
               <small>数量:</small>
-              <!-- <strong>{{ totalCount}}</strong> -->
+              <strong>{{ totalCount}}</strong>
               <small>合计:</small>
-              <!-- <strong>{{ totalMoney }}</strong> -->
+              <strong>{{ totalMoney }}</strong>
             </div>
             <div class="order-btn">
-              <el-button type="warning">挂单</el-button>
               <el-button type="danger" @click="delAllGoods()">删除</el-button>
               <el-button type="success" @click="checkout()"> 结账</el-button>
             </div>
@@ -35,16 +34,16 @@
           </el-tab-pane>
         </el-tabs>
       </el-col>
-      <el-col :span="17">
+      <el-col :span="19">
         <div class="often-goods">
           <div class="title">
             常用商品
           </div>
           <div class="often-goods-list">
             <ul>
-              <li v-for="good in oftenGoods" :key="good.goodsId">
-                <span>{{good.goodsName}}</span>
-                <span class="o-price">{{good.price}}</span>
+              <li v-for="goods in oftenGoods" :key="goods.goodsId" @click="addOrderList(goods)">
+                <span>{{goods.goodsName}}</span>
+                <span class="o-price">{{goods.price}}</span>
               </li>
             </ul>
           </div>
@@ -107,7 +106,9 @@ export default {
   name: "Pos",
   data() {
     return {
-      tableData:[],
+      totalCount: 0,
+      totalMoney: 0,
+      tableData: [],
       oftenGoods: [],
       type0Goods: [],
       type1Goods: [],
@@ -121,8 +122,11 @@ export default {
     orderListObj.style.height = Height + "px";
   },
   created() {
+    // axios
+    //   .get("../../static/oftenGoods.json", {})
     axios
-      .get("http://localhost:8080/static/oftenGoods.json", {})
+      .get(" https://www.easy-mock.com/mock/5b7bb939d02c1e7f50b4106f/oftenGoods")
+
       .then(response => {
         // console.log(response);
         this.oftenGoods = response.data;
@@ -133,21 +137,83 @@ export default {
       });
 
     axios
-      .get("http://localhost:8080/static/typeGoods.json", {})
+      // .get("../../static/typeGoods.json", {})
+            .get(" https://www.easy-mock.com/mock/5b7bb939d02c1e7f50b4106f/typeGoods")
       .then(response => {
         // console.log(response);
-        for (let i = 0; i <4; i++) {
+        for (let i = 0; i < 4; i++) {
           this["type" + i + "Goods"] = response.data[i];
         }
-        // this.type0Goods = response.data[0];
-        //         this.type1Goods = response.data[1];
-        //         this.type2Goods = response.data[2];
-        //         this.type3Goods = response.data[3];
       })
       .catch(error => {
         console.log(error);
         alert("网络错误，不能访问");
       });
+  },
+  methods: {
+    addOrderList(goods) {
+      let isHave = false;
+      for (let i = 0; i < this.tableData.length; i++) {
+        if (this.tableData[i].goodsId == goods.goodsId) {
+          isHave = true;
+        }
+      }
+      if (isHave) {
+        let arr = this.tableData.filter(o => o.goodsId == goods.goodsId);
+        arr[0].count++;
+      } else {
+        let newGoods = {
+          goodsId: goods.goodsId,
+          goodsName: goods.goodsName,
+          price: goods.price,
+          count: 1
+        };
+        this.tableData.push(newGoods);
+      }
+      this.getAllMoney();
+    },
+    delSingleGoods(goods) {
+      this.tableData = this.tableData.filter(o => o.goodsId != goods.goodsId);
+      this.getAllMoney();
+    },
+    delAllGoods() {
+      if (!this.tableData.length) {
+        this.$message.error("没有要删除的商品!");
+      } else {
+        this.$confirm("确认删除订单?", "提示", {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning"
+        })
+          .then(() => {
+            this.tableData = [];
+            this.getAllMoney();
+            this.$message.success("删除成功!");
+          })
+          .catch(() => {
+            this.$message.info("已取消");
+          });
+      }
+    },
+    getAllMoney() {
+      this.totalCount = 0;
+      this.totalMoney = 0;
+      if (this.tableData) {
+        this.tableData.forEach(element => {
+          this.totalCount += element.count;
+          this.totalMoney = this.totalMoney + element.price * element.count;
+        });
+      }
+    },
+    checkout() {
+      if (this.totalCount != 0) {
+        this.tableData = [];
+        this.getAllMoney();
+        this.$message.success("结账成功，感谢你又为店里出了一份力!");
+      } else {
+        this.$message.error("不能空结。老板了解你急切的心情！");
+      }
+    }
   }
 };
 </script>

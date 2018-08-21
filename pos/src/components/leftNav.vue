@@ -2,7 +2,7 @@
     <div class="left-nav">
         <ul>
             <li>
-                <i class="icon iconfont icon-wodezichan"></i>
+                <i class="icon iconfont icon-shouyin-copy"></i>
                 <div>
                     收银
                 </div>
@@ -14,13 +14,13 @@
                 </div>
             </li>
             <li>
-                <i class="icon iconfont icon-huiyuanqia"></i>
+                <i class="icon iconfont icon-huiyuan"></i>
                 <div>
                     会员
                 </div>
             </li>
             <li>
-                <i class="icon iconfont icon-hanbao"></i>
+                <i class="icon iconfont icon-hanbaobao"></i>
                 <div>
                     商品
                 </div>
