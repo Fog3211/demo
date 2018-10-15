@@ -1,11 +1,10 @@
-# demo 
+# Demo 索引  
 
-- [vue快餐管理操作](https://fog3211.github.io/demo/pos/dist/index.html)(2018-8-21)  
-- [js翻页](https://fog3211.github.io/demo/page-turning/index.html)(2018-8-17)  
-- [vue购物车](https://fog3211.github.io/demo/vueShopCart/index.html)(2018-8-10)  
-- [vueTodoList](https://fog3211.github.io/demo/todolist/dist/index.html)(2018-7-25)  
-- [聊天室](https://github.com/fog3211/demo/tree/master/Chat%20room)  
-- [俄罗斯方块](https://fog3211.github.io/demo/Square/index.html)  
-- [贪吃蛇](https://fog3211.github.io/demo/Snack/Snack.html)  
-- [日历组件](https://fog3211.github.io/demo/DatePicker/index.html) 
-- [点赞](https://fog3211.github.io/demo/Star/Star.html)  
+- [branch1 (vue购物车)](https://github.com/fog3211/demo/tree/branch1)  
+- [branch2 (vue快餐管理)](https://github.com/fog3211/demo/tree/branch2)  
+- [branch3 (贪吃蛇)](https://github.com/fog3211/demo/tree/branch3)  
+- [branch4 (日历组件)](https://github.com/fog3211/demo/tree/branch4)  
+- [branch5 (vue todolist)](https://github.com/fog3211/demo/tree/branch5)  
+- [branch6 (聊天室)](https://github.com/fog3211/demo/tree/branch6)  
+- [branch7 (俄罗斯方块)](https://github.com/fog3211/demo/tree/branch7)  
+- [branch8 (星级评分组件)](https://github.com/fog3211/demo/tree/branch8)  
