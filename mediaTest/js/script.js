@@ -1,39 +1,17 @@
-var theme_list_open = false;
 
 $(document).ready(function () {
     function fixHeight() {
-        var headerHeight = $("#switcher").height();
-        $("#iframe").attr("height", $(window).height() - 54 + "px");
+        var navHeight=$("#switcher").height();
+        $("#iframe").attr("height", $(window).height() - navHeight + "px");
     }
     $(window).resize(function () {
         fixHeight();
     }).resize();
 
-    $('.icon-monitor').addClass('active');
-
-    $(".icon-mobile-3").click(function () {
-        $("#by").css("overflow-y", "auto");
-        $('#iframe-wrap').removeClass().addClass('mobile-width-3');
-        $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass(
-            'active');
-        $(this).addClass('active');
-        return false;
-    });
-
-    $(".icon-mobile-2").click(function () {
-        $("#by").css("overflow-y", "auto");
-        $('#iframe-wrap').removeClass().addClass('mobile-width-2');
-        $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass(
-            'active');
-        $(this).addClass('active');
-        return false;
-    });
-
-    $(".icon-mobile-1").click(function () {
-        $("#by").css("overflow-y", "auto");
-        $('#iframe-wrap').removeClass().addClass('mobile-width');
-        $('.icon-tablet,.icon-mobile,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass(
-            'active');
+    $(".icon-monitor").click(function () {
+        $("#by").css("overflow-y", "hidden");
+        $('#iframe-wrap').removeClass().addClass('full-width');
+        $('#Device div').removeClass('active');
         $(this).addClass('active');
         return false;
     });
@@ -41,17 +19,31 @@ $(document).ready(function () {
     $(".icon-tablet").click(function () {
         $("#by").css("overflow-y", "auto");
         $('#iframe-wrap').removeClass().addClass('tablet-width');
-        $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass(
-            'active');
+        $('#Device div').removeClass('active');
         $(this).addClass('active');
         return false;
     });
 
-    $(".icon-monitor").click(function () {
-        $("#by").css("overflow-y", "hidden");
-        $('#iframe-wrap').removeClass().addClass('full-width');
-        $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass(
-            'active');
+    $(".icon-mobile-1").click(function () {
+        $("#by").css("overflow-y", "auto");
+        $('#iframe-wrap').removeClass().addClass('mobile-width');
+        $('#Device div').removeClass('active');
+        $(this).addClass('active');
+        return false;
+    });
+
+    $(".icon-mobile-2").click(function () {
+        $("#by").css("overflow-y", "auto");
+        $('#iframe-wrap').removeClass().addClass('mobile-width-2');
+        $('#Device div').removeClass('active');
+        $(this).addClass('active');
+        return false;
+    });
+
+    $(".icon-mobile-3").click(function () {
+        $("#by").css("overflow-y", "auto");
+        $('#iframe-wrap').removeClass().addClass('mobile-width-3');
+        $('#Device div').removeClass('active');
         $(this).addClass('active');
         return false;
     });

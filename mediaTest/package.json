@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "live-server": "^1.2.0"
+  },
+  "scripts": {
+    "server":"live-server"
+  },
+  "name": "mediaTest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "fog3211 <384977954@qq.com>",
+  "license": "MIT"
+}
