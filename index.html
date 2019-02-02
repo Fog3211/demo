@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义弹窗提示</title>
+    <style>
+        #tip {
+            width: 350px;
+            height: 100px;
+            border: 1px solid #333;
+            position: absolute;
+            left: 50%;
+            margin-left: -175px;
+            top: 0;
+            z-index: 10;
+            border-radius: 15px;
+            text-align: center;
+            opacity: 0;
+            background: #fff;
+        }
+
+        .tip .tip-main {
+            margin-top: 30px;
+        }
+
+        .tip .text {
+            font: 16px/40px "微软雅黑";
+        }
+
+        @keyframes mymove {
+            0% {
+                opacity: 0;
+                top: 0;
+            }
+
+            80% {
+                top: 50px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 50px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tip" class="tip">
+        <div class="tip-main">
+            <span class="text"></span>
+        </div>
+    </div>
+    <button id="show">点击触发提示</button>
+</body>
+<script>
+    var news = "欢迎访问本站"
+    document.getElementById("show").addEventListener("click", function () {
+        showTip(news);
+    });
+
+    function showTip(news) {
+
+        var tip = document.getElementById('tip');
+        var text = tip.getElementsByTagName('span')[0];
+
+        text.innerHTML = news;
+        tip.style = "animation: mymove 2s 1 forwards;";
+
+        setTimeout(function () {
+            tip.style = "animation-name: ";
+        }, 2000)
+    }
+</script>
+
+</html>
