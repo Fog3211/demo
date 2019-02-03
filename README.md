@@ -12,3 +12,4 @@
 - [branch10 (前端跨域解决方案)](https://github.com/fog3211/demo/tree/branch10)  
 - [branch11 (javaScript屏蔽网页源码)](https://github.com/fog3211/demo/tree/branch11)  
 - [branch12 (自定义弹窗提示)](https://github.com/fog3211/demo/tree/branch12)  
+- [branch13 (纯CSS切割文字)](https://github.com/fog3211/demo/tree/branch13)  
