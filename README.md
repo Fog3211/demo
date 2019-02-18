@@ -15,3 +15,4 @@
 - [branch13 (纯CSS切割文字)](https://github.com/fog3211/demo/tree/branch13)  
 - [branch14 (canvas粒子穿越)](https://github.com/fog3211/demo/tree/branch14)  
 - [branch15 (三栏布局demo)](https://github.com/fog3211/demo/tree/branch15)  
+- [branch16 (图片爆炸特效)](https://github.com/fog3211/demo/tree/branch16)  
