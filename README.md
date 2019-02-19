@@ -1,19 +1,3 @@
-# Demo 索引  
+# 图片爆炸特效  
 
-- [branch1 (vue购物车)](https://github.com/fog3211/demo/tree/branch1)  
-- [branch2 (vue快餐管理)](https://github.com/fog3211/demo/tree/branch2)  
-- [branch3 (贪吃蛇)](https://github.com/fog3211/demo/tree/branch3)  
-- [branch4 (日历组件)](https://github.com/fog3211/demo/tree/branch4)  
-- [branch5 (vue todolist)](https://github.com/fog3211/demo/tree/branch5)  
-- [branch6 (聊天室)](https://github.com/fog3211/demo/tree/branch6)  
-- [branch7 (俄罗斯方块)](https://github.com/fog3211/demo/tree/branch7)  
-- [branch8 (星级评分组件)](https://github.com/fog3211/demo/tree/branch8)  
-- [branch9 (响应式预览)](https://github.com/fog3211/demo/tree/branch9)  
-- [branch10 (前端跨域解决方案)](https://github.com/fog3211/demo/tree/branch10)  
-- [branch11 (javaScript屏蔽网页源码)](https://github.com/fog3211/demo/tree/branch11)  
-- [branch12 (自定义弹窗提示)](https://github.com/fog3211/demo/tree/branch12)  
-- [branch13 (纯CSS切割文字)](https://github.com/fog3211/demo/tree/branch13)  
-- [branch14 (canvas粒子穿越)](https://github.com/fog3211/demo/tree/branch14)  
-- [branch15 (三栏布局demo)](https://github.com/fog3211/demo/tree/branch15)  
-- [branch16 (图片爆炸特效)](https://github.com/fog3211/demo/tree/branch16)  
-- [branch17 (js封装函数防抖与节流)](https://github.com/fog3211/demo/tree/branch17) 
+[在线预览](http://htmlpreview.github.io/?https://github.com/fog3211/demo/blob/branch16/index.html)  
