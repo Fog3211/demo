@@ -9,11 +9,11 @@
 - [branch7 (俄罗斯方块)](https://github.com/fog3211/demo/tree/branch7)  
 - [branch8 (星级评分组件)](https://github.com/fog3211/demo/tree/branch8)  
 - [branch9 (响应式预览)](https://github.com/fog3211/demo/tree/branch9)  
-- [branch10 (前端跨域解决方案)](https://github.com/fog3211/demo/tree/branch10)  
-- [branch11 (javaScript屏蔽网页源码)](https://github.com/fog3211/demo/tree/branch11)  
+
+
 - [branch12 (自定义弹窗提示)](https://github.com/fog3211/demo/tree/branch12)  
-- [branch13 (纯CSS切割文字)](https://github.com/fog3211/demo/tree/branch13)  
+ 
 - [branch14 (canvas粒子穿越)](https://github.com/fog3211/demo/tree/branch14)  
-- [branch15 (三栏布局demo)](https://github.com/fog3211/demo/tree/branch15)  
+
 - [branch16 (图片爆炸特效)](https://github.com/fog3211/demo/tree/branch16)  
-- [branch17 (js封装函数防抖与节流)](https://github.com/fog3211/demo/tree/branch17) 
+
