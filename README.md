@@ -9,7 +9,7 @@
 - [branch7 (俄罗斯方块)](https://github.com/fog3211/demo/tree/branch7)  
 - [branch8 (星级评分组件)](https://github.com/fog3211/demo/tree/branch8)  
 - [branch9 (响应式预览)](https://github.com/fog3211/demo/tree/branch9)  
-
+- [branch10 (canvas烟花)](https://github.com/fog3211/demo/tree/branch10)  
 
 - [branch12 (自定义弹窗提示)](https://github.com/fog3211/demo/tree/branch12)  
  
