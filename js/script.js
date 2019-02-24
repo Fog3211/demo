@@ -60,6 +60,7 @@ function rocketPrint() {
 }
 // 循环渲染
 function loop() {
+    // 不断变暗
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
     ctx.fillRect(0, 0, cW, cH);
 
@@ -69,7 +70,7 @@ function loop() {
         rockets[i].render(ctx);
 
         var distance = Math.sqrt(Math.pow(mousePos.x - rockets[i].pos.x, 2) + Math.pow(mousePos.y - rockets[i].pos.y, 2));
-
+        // 速度向上为负的
         if (rockets[i].pos.y < cH / 5 || rockets[i].vel.y >= 0 || distance < 50) {
             rockets[i].explode();
             rockets.splice(i, 1);
@@ -98,7 +99,7 @@ function Rocket() {
 }
 
 Rocket.prototype = new Particle();
-// 轨迹爆炸
+// 爆炸
 Rocket.prototype.explode = function () {
     var count = Math.random() * 10 + 80;
 
@@ -106,18 +107,17 @@ Rocket.prototype.explode = function () {
         var particle = new Particle(this.pos);
         var angle = Math.random() * Math.PI * 2;
 
-        var speed = Math.cos(Math.random() * Math.PI / 2) * 15;
+        var speed = Math.random() * 15;
 
         particle.vel.x = Math.cos(angle) * speed;
         particle.vel.y = Math.sin(angle) * speed;
 
-        particle.size = 10;
+        particle.size = 5;
 
         particle.gravity = 0.2;
         particle.resistance = 0.92;
         particle.shrink = Math.random() * 0.05 + 0.93;
 
-        particle.flick = true;
         particle.color = this.explosionColor;
 
         particles.push(particle);
@@ -130,12 +130,12 @@ Rocket.prototype.render = function (c) {
 
     var x = this.pos.x,
         y = this.pos.y,
-        r = this.size / 2;
+        r = this.size;
 
     c.fillStyle = 'rgb(255, 255, 255)';
 
     c.beginPath();
-    c.arc(x, y, this.flick ? Math.random() * r + r : 2 * r, 0, Math.PI * 2, true);
+    c.arc(x, y, r, 0, Math.PI * 2, true);
     c.closePath();
     c.fill();
 
@@ -152,12 +152,10 @@ function Particle(pos) {
         y: 0
     };
     this.shrink = .97;
-    this.size = 2;
+    this.size = 1;
 
     this.resistance = 1;
     this.gravity = 0;
-
-    this.flick = false;
 
     this.alpha = 1;
     this.fade = 0;
@@ -169,21 +167,20 @@ Particle.prototype.exists = function () {
 };
 // 粒子更新
 Particle.prototype.update = function () {
-    // apply resistance
+    // 阻力
     this.vel.x *= this.resistance;
     this.vel.y *= this.resistance;
 
-    // gravity down
+    //    加速度向下
     this.vel.y += this.gravity;
 
-    // update position based on speed
     this.pos.x += this.vel.x;
     this.pos.y += this.vel.y;
 
-    // shrink
+    // 收缩
     this.size *= this.shrink;
 
-    // fade out
+    // 显隐
     this.alpha -= this.fade;
 };
 // 粒子渲染
@@ -197,12 +194,12 @@ Particle.prototype.render = function (c) {
 
     var x = this.pos.x,
         y = this.pos.y,
-        r = this.size / 2;
+        r = this.size;
 
     c.fillStyle = this.color;
 
     c.beginPath();
-    c.arc(x, y, this.flick ? Math.random() * 2 * r : 2 * r, 0, Math.PI * 2, true);
+    c.arc(x, y, r, 0, Math.PI * 2, true);
 
     c.closePath();
     c.fill();
